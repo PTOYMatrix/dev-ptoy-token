@@ -5,13 +5,9 @@ const toWeiDecimal = value =>
   new BigNumber(value * 10 ** 18).toFixed().toString()
 
 const transfer = (token, owner, amount) => async account => {
-  await token.transfer(
-    '0xF33b59C11D5c9f726DC5bCBC2d6D3705046ED78a',
-    toWeiDecimal(100000),
-    {
-      from: owner
-    }
-  )
+  await token.transfer(account, toWeiDecimal(amount), {
+    from: owner
+  })
 }
 
 module.exports = async (deployer, network, [owner]) => {
