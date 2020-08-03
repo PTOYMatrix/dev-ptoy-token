@@ -1,0 +1,19 @@
+{
+  "name": "blank-ptoy-token",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.com:ptoymatrix-devnet/blank-ptoy-token.git",
+  "license": "MIT",
+  "devDependencies": {
+    "@truffle/contract": "^4.2.15",
+    "ganache-cli": "^6.9.1",
+    "solhint": "^3.1.0",
+    "solium": "^1.2.5",
+    "standard": "^14.3.4",
+    "truffle": "^5.1.37"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "bignumber.js": "^9.0.0"
+  }
+}
