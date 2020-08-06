@@ -1,7 +1,9 @@
 # Setup Ganache CLI and deploy local token
 
 * Clone the repo
-* yarn install` to run the setup
+* Install docker `sudo make install-docker-if-not-already-installed`
+* Install node with NVM `install-node`
+* Run `yarn install` to install the dependencies
 * Setup Ganache CLI:  
 * Ganache CLI using docker
 
