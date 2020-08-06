@@ -2,7 +2,7 @@
 
 * Clone the repo
 * Install docker `sudo make install-docker-if-not-already-installed`
-* Install node with NVM `install-node`
+* Install node `sudo make install-node`
 * Run `yarn install` to install the dependencies
 * Setup Ganache CLI:  
 * Ganache CLI using docker

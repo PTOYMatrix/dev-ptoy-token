@@ -40,6 +40,8 @@ install-docker-if-not-already-installed:
 	fi
 
 install-node:
-	@wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-	@nvm install 10.19.0
-	@nvm use 10.19.0
+	@sudo apt-get update
+	@curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+	@sudo bash nodesource_setup.sh
+	@sudo apt-get --yes install nodejs
+	@sudo npm i -g yarn
