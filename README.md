@@ -1,27 +1,36 @@
 # Setup Ganache CLI and deploy local token
 
-* Clone the repo
-* Install docker `sudo make install-docker-if-not-already-installed`
-* Install node `sudo make install-node`
-* Run `yarn install` to install the dependencies
-* Setup Ganache CLI:  
-* Ganache CLI using docker
+- Clone the repo
+- Install make `sudo apt install make`
+- Install docker `sudo make install-docker-if-not-already-installed`
+- Install node `sudo make install-node`
+- Run `yarn install` to install the dependencies
+- Setup Ganache CLI:
+- Ganache CLI using docker
+
+```bash
+sudo make install-ganache
+```
+
+<div style="text-align: center">OR</div>
 
 ```bash
 docker run -d -p 8545:8545 --name ganache trufflesuite/ganache-cli:latest -d -a 50 -m "man swing emotion lucky riot together behind connect swim allow protect winter" --host 0.0.0.0 --debug
 ```
 
-* Ganache CLI using Node
+<div style="text-align: center">OR</div>
+
+- Ganache CLI using Node
 
 ```bash
 npm i -g ganache-cli
 ganache-cli -d -a 40 -m "man swing emotion lucky riot together behind connect swim allow protect winter" --host 0.0.0.0
 ```
 
-* update ganache `host` in `truffle.js` under `development` network
-* Compile token contract `./node_modules/.bin/truffle compile --network development`
-* Migrate token contract `./node_modules/.bin/truffle migrate --network development`
-* Migration will populate following accounts with tokens
+- update ganache `host` in `truffle.js` under `development` network
+- Compile token contract `./node_modules/.bin/truffle compile --network development`
+- Migrate token contract `./node_modules/.bin/truffle migrate --network development`
+- Migration will populate following accounts with tokens
 
 ```bash
 # Wallets
@@ -41,5 +50,4 @@ ganache-cli -d -a 40 -m "man swing emotion lucky riot together behind connect sw
 - 0x81a97e01dd276dcb0bd61dcc6965b9171da3f7a89e73eee949dff901709de3c0
 - 0x1118544be68b67f9fda3d8e834f3230be756f44f989e2391461320de44fb519e
 - 0xf8c786c2c56d21d90edbd5c6397815b003b0c88aa76eefdb5acc1f60476d8804
-
 ```

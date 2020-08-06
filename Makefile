@@ -45,3 +45,6 @@ install-node:
 	@sudo bash nodesource_setup.sh
 	@sudo apt-get --yes install nodejs
 	@sudo npm i -g yarn
+
+install-ganache:
+	@sudo docker run -d -p 8545:8545 --name ganache trufflesuite/ganache-cli:latest -d -a 50 -m "man swing emotion lucky riot together behind connect swim allow protect winter" --host 0.0.0.0 --debug
