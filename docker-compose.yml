@@ -33,6 +33,7 @@ services:
     restart: on-failure
     networks:
       ptoy_network:
+        ipv4_address: 10.51.0.2
 
   ptoy_dev_token:
     build:
@@ -42,8 +43,9 @@ services:
     container_name: ptoy_dev_token
     image: ptoy_dev_token
     environment:
-      RPC_HOST: ganache
+      RPC_HOST: 10.51.0.2
       RPC_PORT: 8545
+    restart: on-failure
     networks:
       ptoy_network:
-    restart: always
+        ipv4_address: 10.51.0.3

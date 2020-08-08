@@ -6,7 +6,7 @@ RUN mkdir -p /opt
 RUN apk update
 RUN apk add --no-cache git build-base gcc abuild make bash python python3
 
-RUN yarn global add linklocal
+# RUN yarn global add linklocal
 
 WORKDIR /opt
 
@@ -18,6 +18,6 @@ ENV PATH /opt/node_modules/.bin:$PATH
 # copy in our source code last, as it changes the most
 COPY . /opt
 
-RUN npm run build
+# RUN npm run build
 
-RUN linklocal -r
+# RUN linklocal -r

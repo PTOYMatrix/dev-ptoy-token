@@ -83,14 +83,6 @@ build-all-docker-images:
 	@echo "----------------------------------------"
 
 set-up: install-docker-if-not-already-installed check-and-create-network down remove_stopped_containers build-all-docker-images install-node install-ganache
-	@echo "----------------------------------------"
-	@echo "installing node"
-	@echo "----------------------------------------"
-	make install-node
-	@echo "----------------------------------------"
-	@echo "installing ganache"
-	@echo "----------------------------------------"
-	@echo "Docker images built"
 
 install-node:
 	@echo "----------------------------------------"
@@ -116,15 +108,6 @@ install-ganache:
 	@echo "ganache installed"
 	@echo "----------------------------------------"
 
-compile-contract:
-	@echo "---------------------------------------------------------------"
-	@echo "Compiling Contracts"
-	@echo "---------------------------------------------------------------"
-	@docker-compose run --rm ptoy_dev_token ./node_modules/.bin/truffle compile --network development
-	@echo "---------------------------------------------------------------"
-	@echo "Contracts compiled"
-	@echo "---------------------------------------------------------------"
-
 migrate-contract: compile-contract
 	@echo "---------------------------------------------------------------"
 	@echo "Migrating Contracts"
@@ -133,5 +116,16 @@ migrate-contract: compile-contract
 	@echo "---------------------------------------------------------------"
 	@echo "Contracts deployed"
 	@echo "---------------------------------------------------------------"
+
+status:
+	@echo "----------------------------------"
+	@echo "Available Dev PTOY Token Services"
+	@echo "----------------------------------"
+	@docker-compose ps --services
+	@echo "----------------------------------"
+	@echo "Running Dev PTOY Token Services"
+	@echo "----------------------------------"
+	@docker-compose ps
+	@echo "----------------------------------"
 
 reset: wipe-all
