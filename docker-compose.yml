@@ -18,7 +18,7 @@ services:
       - ./ganache_data:/ganache_data
     entrypoint:
       - node
-      - ./build/cli.node.js
+      - /app/ganache-core.docker.cli.js
       - --deterministic
       - --db=/ganache_data
       - --defaultBalanceEther

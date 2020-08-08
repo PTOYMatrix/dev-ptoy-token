@@ -108,7 +108,7 @@ install-ganache:
 	@echo "ganache installed"
 	@echo "----------------------------------------"
 
-migrate-contract: compile-contract
+migrate-contract:
 	@echo "---------------------------------------------------------------"
 	@echo "Migrating Contracts"
 	@echo "---------------------------------------------------------------"
