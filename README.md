@@ -24,8 +24,12 @@ docker run -d -p 8545:8545 --name ganache trufflesuite/ganache-cli:latest -d -a 
 
 ```bash
 npm i -g ganache-cli
-ganache-cli -d -a 40 -m "man swing emotion lucky riot together behind connect swim allow protect winter" --host 0.0.0.0
+ganache-cli -d -a 50 -m "man swing emotion lucky riot together behind connect swim allow protect winter" --host 0.0.0.0
 ```
+
+- Run `sudo make migrate-contract` to compile and deploy the contracts
+
+<div style="text-align: center">OR</div>
 
 - update ganache `host` in `truffle.js` under `development` network
 - Compile token contract `./node_modules/.bin/truffle compile --network development`
@@ -34,13 +38,13 @@ ganache-cli -d -a 40 -m "man swing emotion lucky riot together behind connect sw
 
 ```bash
 # Wallets
-- 0x9455fd3323637368F14939f8330C400cA467869B - (100 ETH) - (100000 DPTOY)
-- 0xF33b59C11D5c9f726DC5bCBC2d6D3705046ED78a - (100 ETH) - (100000 DPTOY)
-- 0x80Eeb004D076885b39bF94557B1477096bf8f105 - (100 ETH) - (100000 DPTOY)
-- 0xdD20B040c75036b4fD919024356aBccafDAD0bd0 - (100 ETH) - (100000 DPTOY)
-- 0xCB88F020EeC5651B71C759734624471c12eA5902 - (100 ETH) - (100000 DPTOY)
-- 0xf35A3D28B488a6438959b043E8Ac044C8c3e6456 - (100 ETH) - (1000000 DPTOY)
-- 0xF41Bc48f182541045ACe0d51aa8e75c102468F74 - (100 ETH) - (1000000 DPTOY)
+- 0x9455fd3323637368F14939f8330C400cA467869B - (500 ETH) - (100000 DPTOY)
+- 0xF33b59C11D5c9f726DC5bCBC2d6D3705046ED78a - (500 ETH) - (100000 DPTOY)
+- 0x80Eeb004D076885b39bF94557B1477096bf8f105 - (500 ETH) - (100000 DPTOY)
+- 0xdD20B040c75036b4fD919024356aBccafDAD0bd0 - (500 ETH) - (100000 DPTOY)
+- 0xCB88F020EeC5651B71C759734624471c12eA5902 - (500 ETH) - (100000 DPTOY)
+- 0xf35A3D28B488a6438959b043E8Ac044C8c3e6456 - (500 ETH) - (1000000 DPTOY)
+- 0xF41Bc48f182541045ACe0d51aa8e75c102468F74 - (500 ETH) - (1000000 DPTOY)
 
 # Private Keys
 - 0x7b1dc2bdec0d1f2779804a2883ab70870571504e8ed1142063b22125081a21ce

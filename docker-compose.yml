@@ -1,0 +1,49 @@
+version: '3.5'
+
+networks:
+  ptoy_network:
+    name: ptoy_network
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.51.0.0/16
+
+services:
+  ganache:
+    image: trufflesuite/ganache-cli:latest
+    container_name: ganache
+    ports:
+      - 8545:8545
+    volumes:
+      - ./ganache_data:/ganache_data
+    entrypoint:
+      - node
+      - ./build/cli.node.js
+      - --deterministic
+      - --db=/ganache_data
+      - --defaultBalanceEther
+      - '500'
+      - --accounts
+      - '50'
+      - --mnemonic
+      - 'man swing emotion lucky riot together behind connect swim allow protect winter'
+      - --hostname
+      - '0.0.0.0'
+      - --debug
+    restart: on-failure
+    networks:
+      ptoy_network:
+
+  ptoy_dev_token:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    container_name: ptoy_dev_token
+    image: ptoy_dev_token
+    environment:
+      RPC_HOST: ganache
+      RPC_PORT: 8545
+    networks:
+      ptoy_network:
+    restart: always

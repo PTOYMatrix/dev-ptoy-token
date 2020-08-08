@@ -1,3 +1,6 @@
+const RPC_HOST = process.env.RPC_HOST || 'localhost'
+const RPC_PORT = process.env.RPC_PORT || 8545
+
 module.exports = {
   networks: {
     ganache: {
@@ -6,8 +9,8 @@ module.exports = {
       network_id: '*'
     },
     development: {
-      host: '127.0.0.1',
-      port: 8545,
+      host: RPC_HOST,
+      port: RPC_PORT,
       network_id: '*'
     },
     'ganache-cli': {
