@@ -141,7 +141,7 @@ contract ERC20 is Context, IERC20 {
     mapping(address => mapping(address => uint256)) private _allowances;
     uint256 private _totalSupply;
     string private _name = "Development PTOY Token";
-    string private _symbol = "100000"; // 5 char max
+    string private _symbol = "DPTOY"; // 5 char max
     uint8 private _decimals = 18; // 18 is standard
 
     constructor() public {}

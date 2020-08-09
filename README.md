@@ -2,10 +2,8 @@
 
 - Clone the repo
 - Install make `sudo apt install make`
-- Install docker `sudo make install-docker-if-not-already-installed`
-- Install node `sudo make install-node`
-- Run `yarn install` to install the dependencies
-- Setup Ganache CLI:
+- Run `sudo make set-up` to install the node.js, configure ganache
+- Alternatively you can setup Ganache:
 - Ganache CLI using docker
 
 ```bash
@@ -54,4 +52,11 @@ ganache-cli -d -a 50 -m "man swing emotion lucky riot together behind connect sw
 - 0x81a97e01dd276dcb0bd61dcc6965b9171da3f7a89e73eee949dff901709de3c0
 - 0x1118544be68b67f9fda3d8e834f3230be756f44f989e2391461320de44fb519e
 - 0xf8c786c2c56d21d90edbd5c6397815b003b0c88aa76eefdb5acc1f60476d8804
+```
+
+- Main Account:
+
+```bash
+   - Address: 0x9123ceF097BDaeA39297b00d10c1D609870C9FAB
+   - Private Key: 0xeeb1cabb2179b7d8764b55244d2c8af03800d2bfe9c9d76ac4501a09382db020
 ```
