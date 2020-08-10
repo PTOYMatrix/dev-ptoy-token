@@ -2,7 +2,7 @@ const BigNumber = require('bignumber.js')
 const BlankToken = artifacts.require('./BLANKPTOY.sol')
 
 const toWeiDecimal = value =>
-  new BigNumber(value * 10 ** 18).toFixed().toString()
+  new BigNumber(value * 10 ** 8).toFixed().toString()
 
 const transfer = (token, owner, amount) => async account => {
   await token.transfer(account, toWeiDecimal(amount), {

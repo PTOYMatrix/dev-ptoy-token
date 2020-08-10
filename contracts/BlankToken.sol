@@ -142,7 +142,7 @@ contract ERC20 is Context, IERC20 {
     uint256 private _totalSupply;
     string private _name = "Development PTOY Token";
     string private _symbol = "DPTOY"; // 5 char max
-    uint8 private _decimals = 18; // 18 is standard
+    uint8 private _decimals = 8; // 8 is standard
 
     constructor() public {}
 
@@ -283,7 +283,7 @@ abstract contract ERC20Capped is ERC20 {
     uint256 private _cap;
 
     constructor(uint256 _tokenCap) public {
-        uint256 cap = _tokenCap; // 1200000000000000000000000000; // 1.2 billion token cap with 18 decimal places
+        uint256 cap = _tokenCap;
         _cap = cap;
     }
 
@@ -617,8 +617,8 @@ contract BLANKPTOY is ERC20Capped, ERC20Burnable, Roles, TokenRecover {
     }
 
     constructor(uint256 _cap, uint256 _initialSupply) public ERC20Capped(_cap) ERC20() {
-        uint8 decimals = 18; // Most tokens have 18 decimal places
-        uint256 initialSupply = _initialSupply; // 1000000000000000000000000000; // This is 1 billion tokens, with 18 0s
+        uint8 decimals = 8;
+        uint256 initialSupply = _initialSupply;
         bool transferEnabled = true; // enable or disale transfer starting off
         bool mintingFinished = true; // can any future tokens be minted?
 
