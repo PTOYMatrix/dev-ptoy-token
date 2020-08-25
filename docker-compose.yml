@@ -30,7 +30,7 @@ services:
       - --hostname
       - '0.0.0.0'
       - --debug
-    restart: on-failure
+    restart: always
     networks:
       ptoy_network:
         ipv4_address: 10.51.0.2
